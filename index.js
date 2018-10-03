@@ -7,7 +7,6 @@
 const app = require('express')();
 const bodyParser = require('body-parser');
 const logger = require('morgan');
-const helmet = require('helmet');
 const log = require('./logger');
 const config = require('./config');
 const { api } = require('./routes');
@@ -20,7 +19,6 @@ require('./db');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(logger('dev'));
-app.use(helmet());
 app.use((req, res, next) => {
   if (req.headers[ 'access-control-request-headers' ]) {
     res.header('Access-Control-Allow-Origin', '*');
