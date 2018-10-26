@@ -6,7 +6,7 @@ const {getTrackingByCode} = require('../db');
 
 router.get('/', async (req, res) => {
   if (req.query && req.query.code) {
-      const doc = await getTrackingByCode(req.query.code);
+      const doc = await getTrackingByCode(req.query.code.toUpperCase());
       return res.send(doc);
   }
     return res.status(400).send({message: 'code not provided'});
