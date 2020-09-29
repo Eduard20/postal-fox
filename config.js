@@ -7,13 +7,12 @@ module.exports = {
   nodeEnv,
   logLevel: nodeEnv === 'development' ? 'debug' : 'info',
   port: PORT || 8080,
-    mongoConf: {
-        url: 'mongodb://ds213513.mlab.com:13513/postal-fox',
-        options: {
-            db: { native_parser: true },
-            server: { poolSize: 5 },
-            user: 'admin',
-            pass: 'admin2018'
-        }
+  mongoConf: {
+    url: 'mongodb+srv://admin:admin@postal-fox.0wqfj.mongodb.net/postal-fox',
+    options: {
+      useCreateIndex: true,
+      useNewUrlParser: true,
+      useFindAndModify: false
     }
+  }
 };
